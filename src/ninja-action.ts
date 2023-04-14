@@ -3,7 +3,6 @@ import {customElement, property} from 'lit/decorators.js';
 import {classMap} from 'lit/directives/class-map.js';
 import {unsafeHTML} from 'lit/directives/unsafe-html.js';
 import {join} from 'lit/directives/join.js';
-import '@material/mwc-icon';
 
 import {INinjaAction} from './interfaces/ininja-action.js';
 
@@ -124,10 +123,8 @@ export class NinjaAction extends LitElement {
 
   override render() {
     let icon;
-    if (this.action.mdIcon) {
-      icon = html`<mwc-icon part="ninja-icon" class="ninja-icon"
-        >${this.action.mdIcon}</mwc-icon
-      >`;
+    if (this.action.tiIcon) {
+        icon = html`<span class="ti ${this.action.tiIcon}"></span>`;
     } else if (this.action.icon) {
       icon = unsafeHTML(this.action.icon || '');
     }

@@ -3,7 +3,7 @@ export interface INinjaAction {
   title: string;
   hotkey?: string;
   handler?: Function;
-  mdIcon?: string;
+  tiIcon?: string;
   icon?: string;
   parent?: string;
   keywords?: string;

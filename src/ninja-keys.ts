@@ -350,6 +350,11 @@ export class NinjaKeys extends LitElement {
   private _headerRef = createRef<NinjaHeader>();
 
   override render() {
+      hotkeys.filter = function(event) {
+          const target = event.target || event.srcElement;
+          const tagName = target.tagName;
+          return !(tagName == 'INPUT' || tagName == 'SELECT' || tagName == 'TEXTAREA');
+      }
     const classes = {
       bump: this._bump,
       'modal-content': true,

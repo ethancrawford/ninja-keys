@@ -350,6 +350,7 @@ export class NinjaKeys extends LitElement {
   private _headerRef = createRef<NinjaHeader>();
 
   override render() {
+    hotkeys.filter = (_event) => { return true; }
     const classes = {
       bump: this._bump,
       'modal-content': true,
